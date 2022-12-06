@@ -2,7 +2,7 @@
 Introduction to Sql  
 
 This repository aims to give a brief introduction to SQL commands with syntax and examples.  
-An artworks database is used and the commands to create the same are available below. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality.
+An artworks database is used and the commands to create the same are available <a href="https://github.com/Renita1206/SQL-101/edit/main/README.md#insert">here</a>. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality.
 
 - view available databases 
 ```
@@ -37,7 +37,7 @@ Col_namen datatype(),
 -- create artist table
 create table artist(name varchar(255), nationality varchar(255));
 -- create painting table
-create table painting(name varchar(255), artistName varchar(255), year YEAR);
+create table painting(name varchar(255), artistName varchar(255), year int);
 ```
 
 ### Alter table
@@ -46,8 +46,8 @@ create table painting(name varchar(255), artistName varchar(255), year YEAR);
 -- syntax
 ALTER TABLE table_name ADD Col_name datatype; 
 -- add columns to artist table
-alter table artist add yearOfBirth YEAR;
-alter table artist add yearOfDeath YEAR;
+alter table artist add yearOfBirth int;
+alter table artist add yearOfDeath int;
 ```
 
 -- add primary key
@@ -80,16 +80,86 @@ column_name;
  ```
  
  ### Insert
+ - syntax
+ ```
+ -- inserting one row
+ insert into tableName values("value 1", "value 2",....);
+ - insert multiple rows
+  insert into tableName values("value 1a", "value 1b",....), ("value 2a", "value 2b",....).....;
  
- 
+```
+
+- inserting values into artist table
+```
+insert into artist values
+("Vincent Van Gogh", "Netherlands", 1853, 1890),
+("Leonardo Da Vinci", "Republic of Florence", 1452, 1519),
+("Pablo Picasso", "Spain", 1881, 1973),
+("Frida Kahlo", "Mexico", 1907, 1954),
+("Oscar-Claude Monet", "France", 1840, 1926);
+```
+- inserting values into painting table
+```
+insert into painting values
+("The Starry Night", "Vincent Van Gogh", 1889),
+("The Potato Eaters", "Vincent Van Gogh", 1885),
+("Wheatfield with Crows", "Vincent Van Gogh", 1890),
+("Cafe Terrace at Night", "Vincent Van Gogh", 1888),
+("The Old Guitarist", "Pablo Picasso", 1904),
+("Le Reve", "Pablo Picasso", 1932),
+("The Weeping Woman", "Pablo Picasso", 1937),
+("Portrait of Dora Maar", "Pablo Picasso", 1937),
+("The Two Fridas", "Frida Kahlo", 1939),
+("The Broken Column", "Frida Kahlo", 1944),
+("The Wounded Deer", "Frida Kahlo", 1946),
+("Diego and I", "Frida Kahlo", 1949),
+("Mona Lisa", "Leonardo Da Vinci", 1503),
+("Salvator Mundi", "Leonardo Da Vinci", 1500),
+("Vitruvian Man", "Leonardo Da Vinci", 1490),
+("The Last Supper", "Leonardo Da Vinci", 1498),
+("Poppies", "Claude Monet", 1873),
+("The Beach at Trouville", "Claude Monet", 1870),
+("The Magpie", "Claude Monet", 1869);
+```
+
  ### Update
  
  ### Delete
  
  ### Select
  - all columns
+ ```
+ -- syntax
+ select * from tableName;
+ -- view all records in artist
+ select * from artist;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206012528-c7e11e55-8b2d-4ae6-bd8d-d2e3b0620b63.png)
+
+ ```
+ -- view all records from paitnings;
+ select * from painting;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206012638-b42b039c-ac9f-4964-b503-2988bc1c378b.png)
+
  - display only certain columns
- - where
+ ```
+ -- syntax  
+ select columnName from tableName;
+ -- example  
+ select name from artist;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206012962-27a0b501-b856-4e9d-9a5b-e21bd99bde06.png)
+
+ - where - Used to display records meeting a certain condition or criteria
+ ```
+ -- syntax 
+ select * from tablName where cond;
+ -- example to display all paintings of Picasso
+ select name, year from painting where artistName = "Pablo Picasso";
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206013613-2ff5762f-53a7-4571-9cfb-811516db21ac.png)
+
  - order by
  - limit
  - distinct
