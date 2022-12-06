@@ -161,9 +161,32 @@ insert into painting values
  ![image](https://user-images.githubusercontent.com/66276711/206013613-2ff5762f-53a7-4571-9cfb-811516db21ac.png)
 
  - order by
+ ```
+ -- syntax 
+ select * from tablName order by property;
+ -- example to display all paintings sorted by year
+ select * from painting order by year;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206014319-c5968340-264b-4288-a97f-dfe90e7db046.png)
+
  - limit
+```
+ -- syntax 
+ select * from tablName limit 5;
+ -- example to display only 3 artists
+ select * from artist limit 3;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206014389-346a2781-136c-4c22-ae35-179980ec837a.png)
+
  - distinct
- 
+ ```
+ -- syntax 
+ select distinct property from tablName;
+ -- example to display distinct artists with paintings from painting table
+ select distinct artistName from painting;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206014829-1208114e-68b5-49db-b154-bdb4b1bc7149.png)
+
  ### Set Operations
  
  ### Aggregate Operations
@@ -171,7 +194,20 @@ insert into painting values
  ### Join Operations  
  
  ### View
+ - syntax
+ ```
+ create view ViewName as
+[select query];
+ ```
  
+- example
+```
+create view DaVinciPaintings as
+ select name, year from painting where artistName="Leonardo Da Vinci";
+```
+![image](https://user-images.githubusercontent.com/66276711/206016099-182fbd80-29f1-4a4e-a0fd-adefcc3613b6.png)
+
+
  ### Some other commands
  - describe
  ```
