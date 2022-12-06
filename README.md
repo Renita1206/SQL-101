@@ -255,9 +255,10 @@ create view DaVinciPaintings as
  TRUNCATE TABLE TableName;
  -- example
  TRUNCATE TABLE artist;
- ```
- 
- 
+ ```  
+   
+     
+More Examples for SQL can be viewed <a href="https://github.com/Renita1206/DBMS-CS301/tree/master/SQL%20Notes"> here </a>.
 
 
 
