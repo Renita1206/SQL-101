@@ -33,7 +33,8 @@ Col_name1 datatype(),
 Col_name2 datatype(),…
 Col_namen datatype(), 
 );
-
+```
+```
 -- create artist table
 create table artist(name varchar(255), nationality varchar(255));
 -- create painting table
@@ -45,6 +46,8 @@ create table painting(name varchar(255), artistName varchar(255), year int);
 ```
 -- syntax
 ALTER TABLE table_name ADD Col_name datatype; 
+```
+```
 -- add columns to artist table
 alter table artist add yearOfBirth int;
 alter table artist add yearOfDeath int;
@@ -54,6 +57,8 @@ alter table artist add yearOfDeath int;
 ```
 -- syntax 
 alter table table_name add PRIMARY KEY(col_name);
+```
+```
 -- add primary keys for artist and painting tables
  alter table artist add PRIMARY KEY(name);
  alter table painting add PRIMARY KEY(name);
@@ -84,8 +89,8 @@ column_name;
  ```
  -- inserting one row
  insert into tableName values("value 1", "value 2",....);
- - insert multiple rows
-  insert into tableName values("value 1a", "value 1b",....), ("value 2a", "value 2b",....).....;
+ -- insert multiple rows
+ insert into tableName values("value 1a", "value 1b",....), ("value 2a", "value 2b",....).....;
  
 ```
 
@@ -131,13 +136,15 @@ insert into painting values
  ```
  -- syntax
  select * from tableName;
+ ```
+ ```
  -- view all records in artist
  select * from artist;
  ```
  ![image](https://user-images.githubusercontent.com/66276711/206012528-c7e11e55-8b2d-4ae6-bd8d-d2e3b0620b63.png)
 
  ```
- -- view all records from paitnings;
+ -- view all records from paintings;
  select * from painting;
  ```
  ![image](https://user-images.githubusercontent.com/66276711/206012638-b42b039c-ac9f-4964-b503-2988bc1c378b.png)
@@ -146,6 +153,8 @@ insert into painting values
  ```
  -- syntax  
  select columnName from tableName;
+ ```
+ ```
  -- example  
  select name from artist;
  ```
@@ -155,6 +164,8 @@ insert into painting values
  ```
  -- syntax 
  select * from tablName where cond;
+ ```
+ ```
  -- example to display all paintings of Picasso
  select name, year from painting where artistName = "Pablo Picasso";
  ```
@@ -164,6 +175,8 @@ insert into painting values
  ```
  -- syntax 
  select * from tablName order by property;
+ ```
+ ```
  -- example to display all paintings sorted by year
  select * from painting order by year;
  ```
@@ -173,6 +186,8 @@ insert into painting values
 ```
  -- syntax 
  select * from tablName limit 5;
+ ```
+ ```
  -- example to display only 3 artists
  select * from artist limit 3;
  ```
@@ -182,6 +197,8 @@ insert into painting values
  ```
  -- syntax 
  select distinct property from tablName;
+ ```
+ ```
  -- example to display distinct artists with paintings from painting table
  select distinct artistName from painting;
  ```
