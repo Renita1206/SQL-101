@@ -2,7 +2,7 @@
 Introduction to Sql  
 
 This repository aims to give a brief introduction to SQL commands with syntax and examples.  
-An artworks database is used and the commands to create the same are available <a href="https://github.com/Renita1206/SQL-101/edit/main/README.md#insert">here</a>. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality. 
+An artworks database is used and the commands to create the same are available <a href="https://github.com/Renita1206/SQL-101#insert">here</a>. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality. 
 
 ### Index:  
 - <a href="https://github.com/Renita1206/SQL-101#create-tables"> Create Tables </a>  
