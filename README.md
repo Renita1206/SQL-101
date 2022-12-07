@@ -305,7 +305,7 @@ WHERE condition;
 
 
  - average
-   ```
+ ```
  -- syntax
  SELECT COUNT(column_name)
 FROM table_name
@@ -318,7 +318,7 @@ WHERE condition;
  ![image](https://user-images.githubusercontent.com/66276711/206164029-461dd616-99f0-4aa4-8f4b-67270f9ea67c.png)
 
  - sum
-   ```
+```
  -- syntax
  SELECT COUNT(column_name)
 FROM table_name
@@ -326,11 +326,13 @@ WHERE condition;
  ```
  
  ### Join Operations
-  ```
+```
  -- syntax
+ select * from tableName1 JOIN tableName2 on cond;
  ```
  ```
  -- example
+ select * from artist JOIN painting on artist.name = painting.artistName;
  ```
  
  ### View
@@ -354,8 +356,23 @@ create view DaVinciPaintings as
  -- syntax
  describe tableName;
  -- example
- describe table artist;
+ describe artist;
  ```
+ ![image](https://user-images.githubusercontent.com/66276711/206167091-74547fc8-c25f-44d4-a25b-823d94c0c118.png)
+
+ 
+ - alias command
+ ```
+ -- syntax
+ select colName as Alias from tableName;
+ ```
+ ```
+ -- example - display artist Names as Artist
+ select name as Artist from artist;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206166999-5fb2f72e-c6a2-47dc-9664-57e996542f3c.png)
+
+ 
  - drop table
  ```
  -- syntax
