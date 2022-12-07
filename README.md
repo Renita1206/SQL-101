@@ -128,9 +128,33 @@ insert into painting values
 ```
 
  ### Update
- 
+ ```
+ -- syntax
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+ ```
+ ```
+ -- example
+ -- create a new column age and set age in artist table
+ alter table Artist add age int;
+ update artist set age = yearOfDeath - yearOfBirth;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206161871-43d1ac41-2dcc-439b-8bc5-b145f7533dd9.png)
+  
+  
  ### Delete
- 
+ ```
+ -- syntax
+ delete from tableName where cond;
+ ```
+ ```
+ -- delete paintings by Da Vinci
+ delete from painting where artistName = "Leonardo Da Vinci";
+ ```
+   
+     
+     
  ### Select
  - all columns
  ```
@@ -203,12 +227,111 @@ insert into painting values
  select distinct artistName from painting;
  ```
  ![image](https://user-images.githubusercontent.com/66276711/206014829-1208114e-68b5-49db-b154-bdb4b1bc7149.png)
+ 
+ - IN
+ ```
+ --syntax
+select * from tableName where property in (value1, value2..);
+```
+```
+-- get paintings by Van Gogh or Picasso
+select name, year from painting where artistName IN ("Vincent Van Gogh", "Pablo Picasso");
+```
+![image](https://user-images.githubusercontent.com/66276711/206160867-8abdda8a-1e9a-4e36-bb6f-80c40eec2c4e.png)
+
+
+ - LIKE  
+   Use  % to represent 1 or more characters. Example - "%School" will accept "ABC School", "PQRST School" etc.  
+   Use _ to represent exactly 1 character. Example - "_at" will accept "cat", "bat" and "mat" but not "that", "flat" or "neat".
+```
+--syntax
+select * from tableName where property in (value1, value2..);
+```
+```
+-- get all paintings from 15th century
+select name, artistName from painting where year like "14__";
+ ```
+![image](https://user-images.githubusercontent.com/66276711/206160967-4365bb99-c296-40de-89cc-d41eec273a14.png)
+
 
  ### Set Operations
+ - Union
+ ```
+ -- syntax
+ query 1 UNION query 2;
+ ```
+ ```
+ -- example - Paintings by Picasso or Frida Kahlo
+ select * from painting where artistName = "Pablo Picasso"
+ UNION
+  select * from painting where artistName = "Frida Kahlo";
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206164782-a4ed6a7f-c2c0-4e51-a1f9-54d7eadaac50.png)
+ 
+ - Intersect
+ ```
+ -- syntax
+ query 1 INTERSECT query 2
+ ```
+ ```
+ -- example - Paintings by Picasso and in the year 1937
+ select * from painting where artistName = "Pablo Picasso"
+INTERSECT
+select * from painting where year = 1937;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206165118-8fd3d758-d66f-43e1-ae53-0f4782bda7db.png)
+
+ - MINUS
+ ```
+ -- syntax
+ query 1 MINUS query 2
+ ```
  
  ### Aggregate Operations
+ - count
+  ```
+ -- syntax
+ SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+ ```
+ ```
+ -- example -  count no of paintings for each artist
+ select artistName, count(name) from painting group by artistName;
+ -- count number of paintings by Frida Kahlo
+ select count(name) from painting where artistName = "Frida Kahlo";
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206163944-739409e7-fc55-48a3-b3ef-ffa862bfbb98.png)
+
+
+ - average
+   ```
+ -- syntax
+ SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+ ```
+ ```
+ -- Find average age of artists
+ select avg(age) from artist;
+ ```
+ ![image](https://user-images.githubusercontent.com/66276711/206164029-461dd616-99f0-4aa4-8f4b-67270f9ea67c.png)
+
+ - sum
+   ```
+ -- syntax
+ SELECT COUNT(column_name)
+FROM table_name
+WHERE condition;
+ ```
  
- ### Join Operations  
+ ### Join Operations
+  ```
+ -- syntax
+ ```
+ ```
+ -- example
+ ```
  
  ### View
  - syntax
