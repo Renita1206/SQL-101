@@ -2,8 +2,22 @@
 Introduction to Sql  
 
 This repository aims to give a brief introduction to SQL commands with syntax and examples.  
-An artworks database is used and the commands to create the same are available <a href="https://github.com/Renita1206/SQL-101/edit/main/README.md#insert">here</a>. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality.
+An artworks database is used and the commands to create the same are available <a href="https://github.com/Renita1206/SQL-101/edit/main/README.md#insert">here</a>. The database consists of two simple tables - paintings and artist. Paintings table consists of information pertaining to a particular painting like artist name, painting name, and year. Artist table provides details of the artist such as name and nationality. 
 
+### Index:  
+- <a href="https://github.com/Renita1206/SQL-101#create-tables"> Create Tables </a>  
+- <a href="https://github.com/Renita1206/SQL-101#alter-table"> Alter Tables </a>  
+- <a href="https://github.com/Renita1206/SQL-101#insert"> Insert </a>  
+- <a href="https://github.com/Renita1206/SQL-101#update"> Update </a>  
+- <a href="https://github.com/Renita1206/SQL-101#delete"> Delete </a>  
+- <a href="https://github.com/Renita1206/SQL-101#select"> Select </a>  
+- <a href="https://github.com/Renita1206/SQL-101#set-operations"> Set Operations </a>  
+- <a href="https://github.com/Renita1206/SQL-101#aggregate-operations"> Aggregate Operations </a>  
+- <a href="https://github.com/Renita1206/SQL-101#join"> Join </a>  
+- <a href="https://github.com/Renita1206/SQL-101#view"> View </a>  
+- <a href="https://github.com/Renita1206/SQL-101#some-other-commands"> Other </a>
+  
+ ### Setting Up Database
 - view available databases 
 ```
 show databases;
@@ -25,7 +39,7 @@ use artworks;
 drop database db_name;
 ```
 
-### Create tables
+### Create Tables
 ```
 -- syntax
 CREATE TABLE table_name( 
@@ -41,7 +55,7 @@ create table artist(name varchar(255), nationality varchar(255));
 create table painting(name varchar(255), artistName varchar(255), year int);
 ```
 
-### Alter table
+### Alter Table
 - add column
 ```
 -- syntax
@@ -325,7 +339,7 @@ FROM table_name
 WHERE condition;
  ```
  
- ### Join Operations
+ ### Join
 ```
  -- syntax
  select * from tableName1 JOIN tableName2 on cond;
